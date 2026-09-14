@@ -2,17 +2,34 @@
    Node AI - Polished Custom Styles & Layout Fixes
    ========================================================= */
 
-/* 1. Global Reset & Dark Theme */
-html {
+/* 1. Global Reset, Dark Theme & Typography */
+html, body {
   scroll-behavior: smooth;
   background-color: #000000;
   color: #ffffff;
+  font-family: __Inter_a13d3b, __Inter_Fallback_a13d3b, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
 }
 
 body {
   overflow-x: hidden;
-  background-color: #000000;
-  color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6, button, input, select, textarea, .nav-item {
+  font-family: __Inter_a13d3b, __Inter_Fallback_a13d3b, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+.mono-large, .mono-small, font-mono, [class*="font-mono"] {
+  font-family: __Space_Mono_33c22e, __Space_Mono_Fallback_33c22e, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+}
+
+#node-checkout-modal,
+#node-checkout-modal * {
+  font-family: __Inter_a13d3b, __Inter_Fallback_a13d3b, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+#node-checkout-modal .font-mono,
+#node-checkout-modal [class*="font-mono"] {
+  font-family: __Space_Mono_33c22e, __Space_Mono_Fallback_33c22e, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
 }
 
 /* 2. Fix Double-Text in Rollover Menus and Buttons */
