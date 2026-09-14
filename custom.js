@@ -68,13 +68,13 @@
           <!-- Payment Tabs -->
           <div class="flex gap-2 mb-4">
             <button type="button" class="payment-tab-btn is-active" data-tab="card">
-              <span>💳</span> Bank Card
+              Bank Card
             </button>
             <button type="button" class="payment-tab-btn" data-tab="usdt">
-              <span>💎</span> USDT (Tether)
+              USDT (Tether)
             </button>
             <button type="button" class="payment-tab-btn" data-tab="eth">
-              <span>⚡</span> Ethereum (ETH)
+              Ethereum (ETH)
             </button>
           </div>
 
@@ -147,7 +147,7 @@
                   <button type="button" id="copy-eth-btn" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-green hover:text-black text-xs font-mono font-semibold transition">Copy</button>
                 </div>
                 <button type="button" id="web3-connect-btn" class="mt-2 w-full py-2 rounded-xl border border-green/50 text-green hover:bg-green/10 text-xs font-mono font-bold flex items-center justify-center gap-2 transition">
-                  <span>🦊</span> Connect Web3 Wallet (MetaMask / WalletConnect)
+                  Connect Web3 Wallet (MetaMask / WalletConnect)
                 </button>
               </div>
             </div>
@@ -158,7 +158,7 @@
         <!-- Submit & Provision Button -->
         <div>
           <button type="button" id="modal-submit-btn" class="w-full py-4 rounded-2xl bg-green text-black font-bold text-sm hover:shadow-[0_0_30px_rgba(76,192,84,0.6)] transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2">
-            <span>🔒</span> PAY &amp; PROVISION NODE INSTANTLY
+            PAY &amp; PROVISION NODE INSTANTLY
           </button>
           <div class="flex items-center justify-center gap-6 mt-3 text-[11px] text-grey">
             <span>&bull; No lock-in period</span>
@@ -171,8 +171,8 @@
 
       <!-- Provisioning Status Screen (Hidden Initially) -->
       <div id="checkout-success-view" class="hidden text-center py-6 space-y-4">
-        <div class="w-16 h-16 bg-green/20 border-2 border-green rounded-full flex items-center justify-center mx-auto text-green text-2xl animate-bounce">
-          ✓
+        <div class="w-16 h-16 bg-green/20 border-2 border-green rounded-full flex items-center justify-center mx-auto text-green text-2xl">
+          OK
         </div>
         <h4 class="text-2xl font-bold text-white">Payment Verified &bull; Node Online</h4>
         <p class="text-sm text-grey max-w-md mx-auto">Your high-performance node instance has been securely initialized in our enclave cluster.</p>
@@ -221,7 +221,7 @@
       if (form) form.classList.remove('hidden');
       if (successView) successView.classList.add('hidden');
       if (submitBtn) {
-        submitBtn.innerHTML = '<span>🔒</span> PAY &amp; PROVISION NODE INSTANTLY';
+        submitBtn.innerHTML = 'PAY &amp; PROVISION NODE INSTANTLY';
         submitBtn.disabled = false;
       }
     }
@@ -273,7 +273,7 @@
       web3Btn.onclick = function() {
         web3Btn.innerText = 'Connecting MetaMask...';
         setTimeout(function() {
-          web3Btn.innerHTML = '✓ Connected: 0x4a12...89bE (Balance: 2.84 ETH)';
+          web3Btn.innerHTML = 'Connected: 0x4a12...89bE (Balance: 2.84 ETH)';
           web3Btn.classList.add('bg-green/20');
         }, 800);
       };
@@ -290,7 +290,7 @@
         }
 
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span class="inline-block animate-spin mr-2">⏳</span> Verifying Payment & Allocating GPU...';
+        submitBtn.innerHTML = 'Verifying Payment & Allocating GPU...';
 
         setTimeout(function() {
           if (form) form.classList.add('hidden');

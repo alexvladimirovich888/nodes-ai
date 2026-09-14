@@ -132,6 +132,27 @@ header {
 }
 
 /* 6. Clean Spacing & Eliminate Empty Gaps */
+/* Center the 3 deploy blocks & hide sticky image column */
+.w-full.hidden.lg\:block.-mt-60 .grid.grid-cols-12.m-auto {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  padding: 0 1rem !important;
+}
+
+.w-full.hidden.lg\:block.-mt-60 .col-span-12.lg\:col-span-6.xl\:col-span-5 {
+  width: 100% !important;
+  max-width: 800px !important;
+  margin: 0 auto !important;
+}
+
+.w-full.hidden.lg\:block.-mt-60 div[class*="xl:col-span-7"] {
+  display: none !important;
+}
+
 /* Eliminate empty 3D placeholder below hero buttons */
 .h-1\/2.xl\:h-50vh,
 div[class*="min-h-96"][class*="md:min-h-4xl"],
@@ -212,7 +233,51 @@ div[class*="deploy-body"] .col-span-12.h5.text-grey.deploy-body strong {
   padding-top: 2rem !important;
 }
 
-/* 7. Streamline Platform Section - Fix Text Overlapping & Improve Design */
+/* 7. Streamline Platform Section & Host/Rent Compact Cards */
+/* Compact Host & Rent cards without heavy glowing backgrounds */
+.inset-0.bg-light-leak,
+.animate-card-spot-light,
+.green-fade-out {
+  display: none !important;
+}
+
+.aspect-5\/7, .aspect-5\/6, .aspect-square {
+  aspect-ratio: auto !important;
+  height: auto !important;
+}
+
+.px-6.py-10.md\:px-12 {
+  padding: 2rem !important;
+}
+
+/* Remove spinning figures from Streamline Platform */
+svg.animate-spin-slow,
+div[class*="animate-spin-slow"],
+.left-0.position.absolute.top-0.w-full.h-full.pointer-events-none {
+  display: none !important;
+}
+
+/* GPU Products section - Keep only GPU Node 1 */
+main > div:nth-child(6) .relative.w-full.pt-header > div.relative.w-full:first-child,
+main > div:nth-child(6) .relative.w-full.pt-header > div.grid.grid-cols-12:nth-child(2),
+main > div:nth-child(6) .gpu-grid > div.h-full.relative:first-child {
+  display: none !important;
+}
+
+main > div:nth-child(6) .gpu-grid {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  padding: 0 1rem !important;
+}
+
+main > div:nth-child(6) .gpu-grid > .hit-box {
+  width: 100% !important;
+  max-width: 800px !important;
+}
+
 .scroll-mt-header .h-screen {
   height: auto !important;
   min-height: auto !important;
