@@ -388,17 +388,5 @@
   </footer>
 
   <script src="custom.js"></script>
-  <script>
-    document.getElementById('deploy-btn').addEventListener('click', function() {
-      var box = document.getElementById('terminal-box');
-      box.classList.remove('hidden');
-      this.innerText = 'INSTANCE PROVISIONING...';
-      this.disabled = true;
-      this.classList.add('opacity-75');
-      setTimeout(function() {
-        alert('AI Node Instance successfully launched!\nEndpoint: https://node-482.nodes.ai:8000/v1\nStatus: Online');
-      }, 2500);
-    });
-  </script>
 </body>
 </html>

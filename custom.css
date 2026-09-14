@@ -132,6 +132,37 @@ header {
 }
 
 /* 6. Clean Spacing & Eliminate Empty Gaps */
+/* Eliminate empty 3D placeholder below hero buttons */
+.h-1\/2.xl\:h-50vh,
+div[class*="min-h-96"][class*="md:min-h-4xl"],
+div[class*="h-1/2"][class*="xl:h-50vh"] {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+div.min-h-screen.flex.flex-col.items-center.justify-center.p-0.px-4.pt-header-lg.overflow-hidden.relative.mb-20.md\:mb-60,
+main > div:nth-child(2) > div.min-h-screen,
+main > div:nth-child(2) {
+  min-height: auto !important;
+  height: auto !important;
+  padding-top: 1rem !important;
+  padding-bottom: 2rem !important;
+  margin-bottom: 0 !important;
+}
+
+.scroll-mt-header.pt-28,
+main > div.scroll-mt-header:nth-child(3) {
+  padding-top: 1rem !important;
+  margin-top: 0 !important;
+}
+
+main > div.scroll-mt-header:nth-child(3) .mb-60 {
+  margin-bottom: 2rem !important;
+}
+
 .deploy-body .h-screen {
   height: auto !important;
   min-height: auto !important;
@@ -267,4 +298,89 @@ button:hover .bg-green {
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
+}
+
+/* =========================================================
+   12. Checkout & Registration Modal Popup (Cards & Crypto)
+   ========================================================= */
+.checkout-modal-backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1rem !important;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease !important;
+}
+
+.checkout-modal-backdrop.is-active {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.checkout-modal-dialog {
+  background: #0d0d10 !important;
+  border: 1px solid rgba(76, 192, 84, 0.35) !important;
+  border-radius: 24px !important;
+  width: 100% !important;
+  max-width: 680px !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  padding: 2rem !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(76, 192, 84, 0.15) !important;
+  transform: scale(0.95) translateY(10px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.checkout-modal-backdrop.is-active .checkout-modal-dialog {
+  transform: scale(1) translateY(0) !important;
+}
+
+.checkout-input {
+  width: 100% !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 12px !important;
+  padding: 10px 14px !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  outline: none !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.checkout-input:focus {
+  border-color: #4cc054 !important;
+  box-shadow: 0 0 10px rgba(76, 192, 84, 0.3) !important;
+}
+
+.payment-tab-btn {
+  flex: 1 !important;
+  padding: 10px 12px !important;
+  border-radius: 12px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #a0a0a0 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.payment-tab-btn.is-active,
+.payment-tab-btn:hover {
+  background: rgba(76, 192, 84, 0.12) !important;
+  border-color: #4cc054 !important;
+  color: #4cc054 !important;
 }
