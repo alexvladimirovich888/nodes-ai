@@ -46,11 +46,11 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
               <label class="block text-[11px] font-mono text-grey mb-1">Full Name / Organization *</label>
-              <input type="text" id="cust-name" required placeholder="Alex Vladimirovich" class="checkout-input" />
+              <input type="text" id="cust-name" required placeholder="Name or Company" class="checkout-input" />
             </div>
             <div>
               <label class="block text-[11px] font-mono text-grey mb-1">Email Address (for API & SSH keys) *</label>
-              <input type="email" id="cust-email" required placeholder="alex@nodes.ai" class="checkout-input" />
+              <input type="email" id="cust-email" required placeholder="name@domain.com" class="checkout-input" />
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@
           <!-- Payment Tabs -->
           <div class="flex gap-2 mb-4">
             <button type="button" class="payment-tab-btn is-active" data-tab="card">
-              <span>💳</span> Visa / Mastercard
+              <span>💳</span> Bank Card
             </button>
             <button type="button" class="payment-tab-btn" data-tab="usdt">
               <span>💎</span> USDT (Tether)
@@ -83,26 +83,22 @@
             <div>
               <label class="block text-[11px] font-mono text-grey mb-1">Card Number</label>
               <div class="relative">
-                <input type="text" id="card-num" placeholder="4532 &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 8890" maxlength="19" class="checkout-input font-mono pr-12" />
-                <div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1 opacity-70">
-                  <span class="text-[10px] font-mono font-bold text-white bg-blue-600/30 px-1.5 py-0.5 rounded border border-blue-400/40">VISA</span>
-                  <span class="text-[10px] font-mono font-bold text-white bg-red-600/30 px-1.5 py-0.5 rounded border border-red-400/40">MC</span>
-                </div>
+                <input type="text" id="card-num" placeholder="0000 0000 0000 0000" maxlength="19" class="checkout-input font-mono" />
               </div>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
               <div>
                 <label class="block text-[11px] font-mono text-grey mb-1">Cardholder Name</label>
-                <input type="text" id="card-name" placeholder="ALEX VLADIMIROVICH" class="checkout-input font-mono uppercase" />
+                <input type="text" id="card-name" placeholder="YOUR NAME" class="checkout-input font-mono uppercase" />
               </div>
               <div>
                 <label class="block text-[11px] font-mono text-grey mb-1">Expires (MM/YY)</label>
-                <input type="text" id="card-exp" placeholder="08/28" maxlength="5" class="checkout-input font-mono" />
+                <input type="text" id="card-exp" placeholder="MM/YY" maxlength="5" class="checkout-input font-mono" />
               </div>
               <div class="col-span-2 md:col-span-1">
                 <label class="block text-[11px] font-mono text-grey mb-1">CVC / CVV</label>
-                <input type="password" id="card-cvc" placeholder="&bull;&bull;&bull;" maxlength="4" class="checkout-input font-mono" />
+                <input type="password" id="card-cvc" placeholder="•••" maxlength="4" class="checkout-input font-mono" />
               </div>
             </div>
           </div>
