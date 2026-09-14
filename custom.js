@@ -108,47 +108,73 @@
             <div class="flex items-center justify-between">
               <span class="text-xs text-white font-semibold">Select Network:</span>
               <div class="flex gap-2 text-xs font-mono">
-                <button type="button" class="px-2.5 py-1 rounded bg-green/20 text-green border border-green/40 font-semibold">ERC-20</button>
-                <button type="button" class="px-2.5 py-1 rounded bg-white/5 text-grey border border-white/10 hover:text-white">TRC-20</button>
-                <button type="button" class="px-2.5 py-1 rounded bg-white/5 text-grey border border-white/10 hover:text-white">Arbitrum</button>
+                <button type="button" class="usdt-net-btn px-2.5 py-1 rounded bg-green/20 text-green border border-green/40 font-semibold" data-net="ERC-20">ERC-20</button>
+                <button type="button" class="usdt-net-btn px-2.5 py-1 rounded bg-white/5 text-grey border border-white/10 hover:text-white" data-net="TRC-20">TRC-20</button>
+                <button type="button" class="usdt-net-btn px-2.5 py-1 rounded bg-white/5 text-grey border border-white/10 hover:text-white" data-net="Arbitrum">Arbitrum</button>
+                <button type="button" class="usdt-net-btn px-2.5 py-1 rounded bg-white/5 text-grey border border-white/10 hover:text-white" data-net="BEP-20">BEP-20</button>
               </div>
             </div>
 
-            <div class="p-3 rounded-xl bg-black border border-white/10 flex flex-col md:flex-row items-center gap-4">
-              <div class="w-20 h-20 bg-white p-1.5 rounded-lg flex-shrink-0 flex items-center justify-center">
-                <!-- QR Code SVG preview -->
-                <svg viewBox="0 0 100 100" class="w-full h-full text-black" fill="currentColor">
-                  <path d="M0,0 h30 v30 h-30 z M10,10 h10 v10 h-10 z M70,0 h30 v30 h-30 z M80,10 h10 v10 h-10 z M0,70 h30 v30 h-30 z M10,80 h10 v10 h-10 z M40,10 h10 v10 h-10 z M40,40 h20 v20 h-20 z M70,70 h10 v10 h-10 z M80,80 h20 v20 h-20 z M40,70 h10 v30 h-10 z M70,40 h30 v10 h-30 z" />
-                </svg>
-              </div>
-              <div class="flex-grow w-full">
-                <label class="block text-[10px] font-mono text-grey mb-1">Official USDT Deposit Address (Smart Escrow):</label>
+            <div class="p-4 rounded-xl bg-black border border-white/10 space-y-3">
+              <div>
+                <label class="block text-[10px] font-mono text-grey mb-1">Official USDT Smart Escrow Address:</label>
                 <div class="flex items-center gap-2">
                   <input type="text" readonly value="0x71C2d6c1A3b8e4E798d578B3F4d8E3d58aF94e89" id="usdt-addr" class="checkout-input font-mono text-xs text-green select-all" />
-                  <button type="button" id="copy-usdt-btn" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-green hover:text-black text-xs font-mono font-semibold transition">Copy</button>
+                  <button type="button" id="copy-usdt-btn" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-green hover:text-black text-xs font-mono font-semibold transition flex-shrink-0">Copy Address</button>
                 </div>
-                <span class="text-[10px] text-grey block mt-1">Instant automatic balance crediting after 1 network confirmation.</span>
+                <span id="usdt-net-hint" class="text-[10px] text-grey block mt-1">Send USDT on Ethereum (ERC-20). Automatic balance crediting after 1 confirmation.</span>
+              </div>
+
+              <!-- Web3 USDT Connect / Pay -->
+              <div class="pt-2 border-t border-white/10">
+                <button type="button" id="web3-usdt-btn" class="w-full py-2.5 rounded-xl border border-green/40 text-green hover:bg-green/10 text-xs font-mono font-bold flex items-center justify-center gap-2 transition">
+                  Connect Wallet to Pay USDT (MetaMask / Trust / Rabby / Coinbase)
+                </button>
+                <div id="web3-usdt-status" class="hidden mt-2 p-2.5 rounded-lg bg-green/10 border border-green/30 text-xs font-mono text-green flex justify-between items-center">
+                  <span id="web3-usdt-acc">Connected: 0x...</span>
+                  <span id="web3-usdt-bal">0.00 USDT</span>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Ethereum Tab Content -->
           <div id="tab-content-eth" class="space-y-4 p-4 rounded-2xl bg-black/60 border border-white/10 hidden">
-            <div class="p-3 rounded-xl bg-black border border-white/10 flex flex-col md:flex-row items-center gap-4">
-              <div class="w-20 h-20 bg-white p-1.5 rounded-lg flex-shrink-0 flex items-center justify-center">
-                <svg viewBox="0 0 100 100" class="w-full h-full text-black" fill="currentColor">
-                  <path d="M0,0 h30 v30 h-30 z M10,10 h10 v10 h-10 z M70,0 h30 v30 h-30 z M80,10 h10 v10 h-10 z M0,70 h30 v30 h-30 z M10,80 h10 v10 h-10 z M50,20 h10 v20 h-10 z M30,50 h40 v10 h-40 z M60,70 h30 v30 h-30 z" />
-                </svg>
-              </div>
-              <div class="flex-grow w-full">
-                <label class="block text-[10px] font-mono text-grey mb-1">ETH Deposit Address:</label>
+            <div class="p-4 rounded-xl bg-black border border-white/10 space-y-3">
+              <div>
+                <label class="block text-[10px] font-mono text-grey mb-1">Official ETH Deposit Address:</label>
                 <div class="flex items-center gap-2">
                   <input type="text" readonly value="0x89eE52c34d81FaF2a739501B563D4e04318c643B" id="eth-addr" class="checkout-input font-mono text-xs text-green select-all" />
-                  <button type="button" id="copy-eth-btn" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-green hover:text-black text-xs font-mono font-semibold transition">Copy</button>
+                  <button type="button" id="copy-eth-btn" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-green hover:text-black text-xs font-mono font-semibold transition flex-shrink-0">Copy Address</button>
                 </div>
-                <button type="button" id="web3-connect-btn" class="mt-2 w-full py-2 rounded-xl border border-green/50 text-green hover:bg-green/10 text-xs font-mono font-bold flex items-center justify-center gap-2 transition">
-                  Connect Web3 Wallet (MetaMask / WalletConnect)
+                <span class="text-[10px] text-grey block mt-1">Accepts ETH on Ethereum Mainnet &amp; Arbitrum. Instant on-chain allocation.</span>
+              </div>
+
+              <!-- Real Web3 Wallet Connect Button & Live Status -->
+              <div class="pt-2 border-t border-white/10 space-y-2">
+                <button type="button" id="web3-connect-btn" class="w-full py-3 rounded-xl border border-green/50 text-green hover:bg-green/10 text-xs font-mono font-bold flex items-center justify-center gap-2 transition">
+                  Connect Web3 Wallet (MetaMask / Coinbase / Trust / Rabby)
                 </button>
+
+                <div id="web3-wallet-status" class="hidden p-3 rounded-xl bg-green/10 border border-green/30 text-xs font-mono text-green space-y-1">
+                  <div class="flex justify-between">
+                    <span class="text-grey">Wallet:</span>
+                    <span id="web3-acc-label" class="text-white font-bold">0x...</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-grey">Network:</span>
+                    <span id="web3-network-label" class="text-green font-semibold">Ethereum Mainnet</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-grey">Balance:</span>
+                    <span id="web3-balance-label" class="text-white font-bold">0.0000 ETH</span>
+                  </div>
+                </div>
+
+                <div id="web3-install-hint" class="hidden p-2.5 rounded-lg bg-white/5 border border-white/10 text-[11px] text-grey flex items-center justify-between">
+                  <span>No browser Web3 wallet detected.</span>
+                  <a href="https://metamask.io/download/" target="_blank" class="text-green font-bold hover:underline">Install MetaMask</a>
+                </div>
               </div>
             </div>
           </div>
@@ -246,6 +272,173 @@
       };
     });
 
+    // Web3 State & Connection Logic
+    var currentWeb3Account = null;
+    var currentWeb3ChainId = null;
+
+    function getProvider() {
+      if (typeof window.ethereum !== 'undefined') return window.ethereum;
+      if (typeof window.okxwallet !== 'undefined') return window.okxwallet;
+      if (typeof window.coinbaseWalletExtension !== 'undefined') return window.coinbaseWalletExtension;
+      if (typeof window.trustwallet !== 'undefined') return window.trustwallet;
+      return null;
+    }
+
+    function getNetworkName(chainId) {
+      var id = parseInt(chainId, 16) || parseInt(chainId, 10);
+      switch(id) {
+        case 1: return 'Ethereum Mainnet';
+        case 42161: return 'Arbitrum One';
+        case 56: return 'BNB Smart Chain';
+        case 137: return 'Polygon';
+        case 8453: return 'Base';
+        case 10: return 'OP Mainnet';
+        case 11155111: return 'Sepolia Testnet';
+        default: return 'EVM Network (ID: ' + id + ')';
+      }
+    }
+
+    async function connectWeb3Wallet() {
+      var provider = getProvider();
+      var connectBtn = document.getElementById('web3-connect-btn');
+      var usdtBtn = document.getElementById('web3-usdt-btn');
+      var statusBox = document.getElementById('web3-wallet-status');
+      var usdtStatusBox = document.getElementById('web3-usdt-status');
+      var installHint = document.getElementById('web3-install-hint');
+
+      if (!provider) {
+        if (installHint) installHint.classList.remove('hidden');
+        alert('No Web3 wallet extension found. Please install MetaMask, Coinbase Wallet, Rabby, or Trust Wallet to connect directly.');
+        return;
+      }
+
+      try {
+        if (connectBtn) {
+          connectBtn.disabled = true;
+          connectBtn.innerText = 'Connecting to Wallet...';
+        }
+        if (usdtBtn) {
+          usdtBtn.disabled = true;
+          usdtBtn.innerText = 'Connecting to Wallet...';
+        }
+
+        var accounts = await provider.request({ method: 'eth_requestAccounts' });
+        if (!accounts || !accounts.length) {
+          throw new Error('No accounts selected.');
+        }
+
+        currentWeb3Account = accounts[0];
+        currentWeb3ChainId = await provider.request({ method: 'eth_chainId' });
+
+        var balanceHex = await provider.request({
+          method: 'eth_getBalance',
+          params: [currentWeb3Account, 'latest']
+        });
+        var balanceEth = (parseInt(balanceHex, 16) / 1e18).toFixed(4);
+        var shortAddress = currentWeb3Account.substring(0, 6) + '...' + currentWeb3Account.substring(currentWeb3Account.length - 4);
+        var networkName = getNetworkName(currentWeb3ChainId);
+
+        // Update ETH Tab UI
+        if (document.getElementById('web3-acc-label')) {
+          document.getElementById('web3-acc-label').innerText = shortAddress;
+        }
+        if (document.getElementById('web3-network-label')) {
+          document.getElementById('web3-network-label').innerText = networkName;
+        }
+        if (document.getElementById('web3-balance-label')) {
+          document.getElementById('web3-balance-label').innerText = balanceEth + ' ETH';
+        }
+        if (statusBox) statusBox.classList.remove('hidden');
+        if (installHint) installHint.classList.add('hidden');
+
+        if (connectBtn) {
+          connectBtn.disabled = false;
+          connectBtn.innerHTML = 'Connected: ' + shortAddress + ' (' + networkName + ')';
+          connectBtn.classList.add('bg-green/10');
+        }
+
+        // Update USDT Tab UI
+        if (document.getElementById('web3-usdt-acc')) {
+          document.getElementById('web3-usdt-acc').innerText = 'Connected: ' + shortAddress;
+        }
+        if (document.getElementById('web3-usdt-bal')) {
+          document.getElementById('web3-usdt-bal').innerText = networkName;
+        }
+        if (usdtStatusBox) usdtStatusBox.classList.remove('hidden');
+        if (usdtBtn) {
+          usdtBtn.disabled = false;
+          usdtBtn.innerHTML = 'Connected: ' + shortAddress;
+          usdtBtn.classList.add('bg-green/10');
+        }
+
+        // Setup account/chain change events
+        if (provider.on) {
+          provider.on('accountsChanged', function(newAccs) {
+            if (newAccs.length) {
+              currentWeb3Account = newAccs[0];
+              connectWeb3Wallet();
+            } else {
+              currentWeb3Account = null;
+              if (statusBox) statusBox.classList.add('hidden');
+              if (connectBtn) connectBtn.innerText = 'Connect Web3 Wallet';
+            }
+          });
+          provider.on('chainChanged', function() {
+            connectWeb3Wallet();
+          });
+        }
+
+      } catch (err) {
+        console.error('Web3 connection error:', err);
+        if (connectBtn) {
+          connectBtn.disabled = false;
+          connectBtn.innerText = 'Connect Web3 Wallet (MetaMask / Trust / Rabby)';
+        }
+        if (usdtBtn) {
+          usdtBtn.disabled = false;
+          usdtBtn.innerText = 'Connect Wallet to Pay USDT';
+        }
+        if (err.code === 4001) {
+          alert('Wallet connection request was cancelled.');
+        } else {
+          alert('Could not connect wallet: ' + (err.message || err));
+        }
+      }
+    }
+
+    var web3Btn = document.getElementById('web3-connect-btn');
+    if (web3Btn) web3Btn.onclick = connectWeb3Wallet;
+
+    var web3UsdtBtn = document.getElementById('web3-usdt-btn');
+    if (web3UsdtBtn) web3UsdtBtn.onclick = connectWeb3Wallet;
+
+    // USDT Network Buttons
+    var usdtNetBtns = modal.querySelectorAll('.usdt-net-btn');
+    usdtNetBtns.forEach(function(btn) {
+      btn.onclick = function() {
+        usdtNetBtns.forEach(function(b) {
+          b.className = 'usdt-net-btn px-2.5 py-1 rounded bg-white/5 text-grey border border-white/10 hover:text-white';
+        });
+        btn.className = 'usdt-net-btn px-2.5 py-1 rounded bg-green/20 text-green border border-green/40 font-semibold';
+        var net = btn.getAttribute('data-net');
+        var input = document.getElementById('usdt-addr');
+        var hint = document.getElementById('usdt-net-hint');
+        if (net === 'TRC-20') {
+          if (input) input.value = 'TYDzsYbmkg61L18j7WJ79wK72314F23f99';
+          if (hint) hint.innerText = 'Send USDT on TRON (TRC-20). Network fee ~$1. Instant crediting.';
+        } else if (net === 'Arbitrum') {
+          if (input) input.value = '0x71C2d6c1A3b8e4E798d578B3F4d8E3d58aF94e89';
+          if (hint) hint.innerText = 'Send USDT on Arbitrum One L2. Low gas fee (< $0.05).';
+        } else if (net === 'BEP-20') {
+          if (input) input.value = '0x71C2d6c1A3b8e4E798d578B3F4d8E3d58aF94e89';
+          if (hint) hint.innerText = 'Send USDT on BNB Smart Chain (BEP-20). Fast & low cost.';
+        } else {
+          if (input) input.value = '0x71C2d6c1A3b8e4E798d578B3F4d8E3d58aF94e89';
+          if (hint) hint.innerText = 'Send USDT on Ethereum (ERC-20). Automatic balance crediting after 1 confirmation.';
+        }
+      };
+    });
+
     // Copy buttons
     var copyUsdt = document.getElementById('copy-usdt-btn');
     if (copyUsdt) {
@@ -253,7 +446,7 @@
         var val = document.getElementById('usdt-addr').value;
         navigator.clipboard.writeText(val);
         copyUsdt.innerText = 'Copied!';
-        setTimeout(function() { copyUsdt.innerText = 'Copy'; }, 2000);
+        setTimeout(function() { copyUsdt.innerText = 'Copy Address'; }, 2000);
       };
     }
 
@@ -263,25 +456,13 @@
         var val = document.getElementById('eth-addr').value;
         navigator.clipboard.writeText(val);
         copyEth.innerText = 'Copied!';
-        setTimeout(function() { copyEth.innerText = 'Copy'; }, 2000);
+        setTimeout(function() { copyEth.innerText = 'Copy Address'; }, 2000);
       };
     }
 
-    // Web3 connect simulation
-    var web3Btn = document.getElementById('web3-connect-btn');
-    if (web3Btn) {
-      web3Btn.onclick = function() {
-        web3Btn.innerText = 'Connecting MetaMask...';
-        setTimeout(function() {
-          web3Btn.innerHTML = 'Connected: 0x4a12...89bE (Balance: 2.84 ETH)';
-          web3Btn.classList.add('bg-green/20');
-        }, 800);
-      };
-    }
-
-    // Submit handler
+    // Submit handler with real Web3 on-chain transaction execution
     if (submitBtn) {
-      submitBtn.onclick = function() {
+      submitBtn.onclick = async function() {
         var email = document.getElementById('cust-email');
         if (email && !email.value) {
           alert('Please enter your email address for node credentials.');
@@ -289,13 +470,76 @@
           return;
         }
 
+        var activeTabBtn = modal.querySelector('.payment-tab-btn.is-active');
+        var activeTab = activeTabBtn ? activeTabBtn.getAttribute('data-tab') : 'card';
+        var provider = getProvider();
+
+        // If paying with ETH and Web3 wallet is connected: trigger real wallet transaction
+        if (activeTab === 'eth' && provider && currentWeb3Account) {
+          try {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Confirm transaction in your Web3 wallet...';
+
+            // Calculate ~0.00043 ETH in hex wei
+            var priceText = document.getElementById('checkout-node-price')?.textContent || '$1.29';
+            var rawPrice = parseFloat(priceText.replace('$', '')) || 1.29;
+            var ethRate = rawPrice / 3000; // estimated ~$3000/ETH
+            var weiBigInt = BigInt(Math.floor(ethRate * 1e18));
+            var hexWei = '0x' + weiBigInt.toString(16);
+
+            var txHash = await provider.request({
+              method: 'eth_sendTransaction',
+              params: [{
+                from: currentWeb3Account,
+                to: '0x89eE52c34d81FaF2a739501B563D4e04318c643B',
+                value: hexWei
+              }]
+            });
+
+            submitBtn.innerHTML = 'Transaction Broadcasted! Initializing Node...';
+
+            setTimeout(function() {
+              if (form) form.classList.add('hidden');
+              if (successView) {
+                successView.classList.remove('hidden');
+                // Insert real txHash
+                var txContainer = successView.querySelector('#success-tx-row');
+                if (!txContainer) {
+                  var detailBox = successView.querySelector('.font-mono.text-xs');
+                  if (detailBox) {
+                    detailBox.insertAdjacentHTML('beforeend', `
+                      <div id="success-tx-row" class="flex justify-between text-grey pt-1 border-t border-white/10">
+                        <span>On-Chain Tx:</span>
+                        <a href="https://etherscan.io/tx/${txHash}" target="_blank" class="text-green hover:underline font-mono">${txHash.substring(0, 10)}...${txHash.substring(txHash.length - 8)}</a>
+                      </div>
+                    `);
+                  }
+                }
+              }
+            }, 1500);
+            return;
+
+          } catch (txErr) {
+            console.error('Transaction error:', txErr);
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'PAY &amp; PROVISION NODE INSTANTLY';
+            if (txErr.code === 4001) {
+              alert('Transaction was rejected in your wallet.');
+            } else {
+              alert('Wallet transaction failed: ' + (txErr.message || txErr));
+            }
+            return;
+          }
+        }
+
+        // Default or Card / USDT flow
         submitBtn.disabled = true;
         submitBtn.innerHTML = 'Verifying Payment & Allocating GPU...';
 
         setTimeout(function() {
           if (form) form.classList.add('hidden');
           if (successView) successView.classList.remove('hidden');
-        }, 1800);
+        }, 1600);
       };
     }
 
