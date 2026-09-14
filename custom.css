@@ -170,10 +170,14 @@ header {
   display: none !important;
 }
 
-/* Eliminate empty 3D placeholder below hero buttons */
+/* Eliminate empty 3D placeholder below hero buttons & empty video blocks */
 .h-1\/2.xl\:h-50vh,
 div[class*="min-h-96"][class*="md:min-h-4xl"],
-div[class*="h-1/2"][class*="xl:h-50vh"] {
+div[class*="h-1/2"][class*="xl:h-50vh"],
+.h-\[300px\].md\:h-\[700px\],
+div[class*="h-[300px]"][class*="md:h-[700px]"],
+div[class*="bg-off-black"][style*="opacity:0"],
+div[class*="bg-off-black"][style*="opacity: 0"] {
   display: none !important;
   height: 0 !important;
   min-height: 0 !important;
@@ -191,21 +195,49 @@ main > div:nth-child(2) {
   margin-bottom: 0 !important;
 }
 
+/* Compact all main page sections so they flow smoothly with ~1.5rem to 2rem gap */
+main > div.scroll-mt-header,
+main > section,
+section {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
 .scroll-mt-header.pt-28,
 main > div.scroll-mt-header:nth-child(3) {
-  padding-top: 1rem !important;
+  padding-top: 0.5rem !important;
   margin-top: 0 !important;
 }
 
-main > div.scroll-mt-header:nth-child(3) .mb-60 {
-  margin-bottom: 2rem !important;
+main > div.scroll-mt-header:nth-child(3) .mb-60,
+.mb-60, .md\:mb-60, .mb-40, .md\:mb-40, .mb-30, .my-20, .md\:mt-60 {
+  margin-top: 0.75rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.min-h-screen, [class*="min-h-screen"], .h-screen {
+  min-height: auto !important;
+  height: auto !important;
+}
+
+.grid.grid-cols-12.gap-3.w-full.max-w-1920.m-auto.px-4.md\:px-16.flex.flex-col.items-center.justify-center.relative.h-full.min-h-screen.mb-60 {
+  height: auto !important;
+  min-height: auto !important;
+  margin-bottom: 1.5rem !important;
+  padding-top: 0 !important;
+}
+
+.mt-14.md\:mt-40, [class*="md:mt-40"] {
+  margin-top: 1.5rem !important;
 }
 
 .deploy-body .h-screen {
   height: auto !important;
   min-height: auto !important;
   position: relative !important;
-  margin: 1.5rem 0 !important;
+  margin: 1.25rem 0 !important;
   padding: 0 !important;
 }
 
@@ -222,10 +254,10 @@ div[class*="deploy-body"] .col-span-12.h5.text-grey.deploy-body {
   background: rgba(18, 18, 20, 0.9) !important;
   border: 1px solid rgba(76, 192, 84, 0.3) !important;
   border-radius: 20px !important;
-  padding: 2rem !important;
+  padding: 1.75rem !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important;
   backdrop-filter: blur(16px) !important;
-  margin-bottom: 1.5rem !important;
+  margin-bottom: 1.25rem !important;
   position: relative !important;
 }
 
@@ -239,14 +271,24 @@ div[class*="deploy-body"] .col-span-12.h5.text-grey.deploy-body strong {
 }
 
 .mt-96, .mt-60, .mt-40 {
-  margin-top: 1.5rem !important;
-}
-
-.mb-60, .md\:mb-60, .mb-40, .md\:mb-40 {
-  margin-bottom: 2.5rem !important;
+  margin-top: 1.25rem !important;
 }
 
 .pt-28 {
+  padding-top: 1.5rem !important;
+}
+
+/* Compact Section 6 (Build and deploy) and Footer */
+main > div:nth-child(7),
+main > div:nth-child(7) > div {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+footer {
+  margin-top: 2rem !important;
   padding-top: 2rem !important;
 }
 
