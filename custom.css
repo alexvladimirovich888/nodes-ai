@@ -1,0 +1,116 @@
+/* =========================================================
+   Node AI Custom Styles - Navigation & Layout Fixes
+   ========================================================= */
+
+/* Desktop Navigation Header */
+@media (min-width: 1024px) {
+  nav[aria-label="Main navigation"],
+  nav.group\/nav {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: static !important;
+    display: flex !important;
+  }
+  .group:hover > div[style*="height:0px"],
+  .group:hover > div[style*="height: 0px"],
+  .group:hover > div.lg\:absolute {
+    height: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+  .group:hover ul {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+  .group:hover ul li a {
+    transform: translateY(0) !important;
+  }
+}
+
+/* Make animated elements visible in static mode */
+.opacity-0 {
+  opacity: 1 !important;
+}
+.translate-y-4,
+.translate-y-8,
+.translate-y-10,
+.translate-y-12,
+.translate-y-20,
+.translate-y-24,
+.translate-y-28 {
+  transform: none !important;
+}
+.scale-0 {
+  transform: scale(1) !important;
+}
+
+/* Ensure screen-reader only elements remain invisible */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border-width: 0 !important;
+}
+
+/* Fix roll-over text container height */
+.overflow-hidden.relative {
+  height: 1.25em !important;
+  line-height: 1.25em !important;
+}
+
+/* Hide empty WebGL canvas container */
+canvas {
+  display: none !important;
+}
+
+/* Remove unnecessary large vertical spaces from SSR sticky scroll */
+.deploy-body .h-screen {
+  height: auto !important;
+  min-height: auto !important;
+  padding: 2rem 0 !important;
+}
+.w-full.hidden.lg\:block.-mt-60 {
+  margin-top: 0 !important;
+}
+.mt-96 {
+  margin-top: 2.5rem !important;
+}
+.mb-60 {
+  margin-bottom: 4rem !important;
+}
+.md\:mb-60 {
+  margin-bottom: 5rem !important;
+}
+.h-\[50vh\] {
+  height: auto !important;
+  min-height: auto !important;
+  padding: 1.5rem 0 !important;
+}
+
+div[class*="xl:col-span-7"][class*="sticky"] {
+  height: 460px !important;
+  position: sticky !important;
+  top: 100px !important;
+}
+div[class*="xl:col-span-7"] .h-screen {
+  height: 100% !important;
+}
+div[class*="xl:col-span-7"] img {
+  max-height: 440px !important;
+  object-fit: contain !important;
+  width: auto !important;
+  margin: 0 auto !important;
+}
+
+/* Text gradient styling */
+.text-gradient {
+  background: linear-gradient(180deg, #FFFFFF 0%, #A0A0A0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
