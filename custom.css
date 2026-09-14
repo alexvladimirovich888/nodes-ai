@@ -1,8 +1,45 @@
-/* =========================================================
-   Node AI Custom Styles - Navigation & Layout Fixes
+﻿/* =========================================================
+   Node AI - Polished Custom Styles & Layout Fixes
    ========================================================= */
 
-/* Desktop Navigation Header */
+/* 1. Typography & General Layout */
+html {
+  scroll-behavior: smooth;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* 2. Fix Double-Text in Rollover Menus and Buttons */
+.flex.absolute.top-full {
+  display: none !important;
+}
+
+div.overflow-hidden.relative > .flex {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+}
+
+/* 3. Header & Navigation */
+header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 100 !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
 @media (min-width: 1024px) {
   nav[aria-label="Main navigation"],
   nav.group\/nav {
@@ -10,28 +47,69 @@
     pointer-events: auto !important;
     position: static !important;
     display: flex !important;
-  }
-  .group:hover > div[style*="height:0px"],
-  .group:hover > div[style*="height: 0px"],
-  .group:hover > div.lg\:absolute {
     height: auto !important;
-    overflow: visible !important;
+    background: transparent !important;
+  }
+
+  .relative.group {
+    position: relative !important;
+  }
+
+  .relative.group > div.lg\:absolute {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    padding-top: 12px !important;
+    height: auto !important;
+    z-index: 110 !important;
+    min-width: 190px !important;
+  }
+
+  .relative.group:hover > div.lg\:absolute,
+  .relative.group:focus-within > div.lg\:absolute {
+    display: block !important;
     pointer-events: auto !important;
   }
-  .group:hover ul {
+
+  .relative.group > div.lg\:absolute > ul {
     opacity: 1 !important;
     pointer-events: auto !important;
-    transform: translateY(0) !important;
+    background: rgba(10, 10, 10, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 12px !important;
+    padding: 12px 16px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
   }
-  .group:hover ul li a {
-    transform: translateY(0) !important;
+
+  .relative.group > div.lg\:absolute > ul li a {
+    transform: none !important;
+    opacity: 0.8 !important;
+    padding: 6px 0 !important;
+    display: block !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .relative.group > div.lg\:absolute > ul li a:hover {
+    opacity: 1 !important;
+    color: #4cc054 !important;
+    transform: translateX(4px) !important;
   }
 }
 
-/* Make animated elements visible in static mode */
+/* 4. Hide Incomplete Sticky Floating Section Nav */
+.bg-section-nav {
+  display: none !important;
+}
+
+/* 5. Make Static Content Visible */
 .opacity-0 {
   opacity: 1 !important;
 }
+
 .translate-y-4,
 .translate-y-8,
 .translate-y-10,
@@ -41,11 +119,94 @@
 .translate-y-28 {
   transform: none !important;
 }
+
 .scale-0 {
   transform: scale(1) !important;
 }
 
-/* Ensure screen-reader only elements remain invisible */
+/* 6. Clean Up Oversized Spacing & SSR Scroll Pinning */
+.deploy-body .h-screen {
+  height: auto !important;
+  min-height: auto !important;
+  padding: 2.5rem 0 !important;
+}
+
+.w-full.hidden.lg\:block.-mt-60 {
+  margin-top: 0 !important;
+}
+
+.mt-96 {
+  margin-top: 2rem !important;
+}
+
+.mb-60 {
+  margin-bottom: 3.5rem !important;
+}
+
+.md\:mb-60 {
+  margin-bottom: 4rem !important;
+}
+
+.h-\[50vh\] {
+  height: auto !important;
+  min-height: auto !important;
+  padding: 1.5rem 0 !important;
+}
+
+div[class*="xl:col-span-7"][class*="sticky"],
+div[class*="2xl:col-span-6"][class*="sticky"] {
+  height: 480px !important;
+  position: sticky !important;
+  top: 120px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+div[class*="xl:col-span-7"] .h-screen {
+  height: 100% !important;
+}
+
+div[class*="xl:col-span-7"] img {
+  max-height: 440px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+  border-radius: 16px !important;
+}
+
+/* 7. Hide Empty WebGL Canvas Container */
+canvas {
+  display: none !important;
+}
+
+/* 8. Text Gradients & Contrast */
+.text-gradient {
+  background: linear-gradient(180deg, #FFFFFF 20%, #909090 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.text-green {
+  color: #4cc054 !important;
+}
+
+.bg-green {
+  background-color: #4cc054 !important;
+  color: #000000 !important;
+}
+
+a.group .bg-green,
+button .bg-green {
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+a.group:hover .bg-green,
+button:hover .bg-green {
+  box-shadow: 0 0 20px rgba(76, 192, 84, 0.4) !important;
+  transform: translateY(-1px) !important;
+}
+
 .sr-only {
   position: absolute !important;
   width: 1px !important;
@@ -55,62 +216,5 @@
   overflow: hidden !important;
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
-  border-width: 0 !important;
-}
-
-/* Fix roll-over text container height */
-.overflow-hidden.relative {
-  height: 1.25em !important;
-  line-height: 1.25em !important;
-}
-
-/* Hide empty WebGL canvas container */
-canvas {
-  display: none !important;
-}
-
-/* Remove unnecessary large vertical spaces from SSR sticky scroll */
-.deploy-body .h-screen {
-  height: auto !important;
-  min-height: auto !important;
-  padding: 2rem 0 !important;
-}
-.w-full.hidden.lg\:block.-mt-60 {
-  margin-top: 0 !important;
-}
-.mt-96 {
-  margin-top: 2.5rem !important;
-}
-.mb-60 {
-  margin-bottom: 4rem !important;
-}
-.md\:mb-60 {
-  margin-bottom: 5rem !important;
-}
-.h-\[50vh\] {
-  height: auto !important;
-  min-height: auto !important;
-  padding: 1.5rem 0 !important;
-}
-
-div[class*="xl:col-span-7"][class*="sticky"] {
-  height: 460px !important;
-  position: sticky !important;
-  top: 100px !important;
-}
-div[class*="xl:col-span-7"] .h-screen {
-  height: 100% !important;
-}
-div[class*="xl:col-span-7"] img {
-  max-height: 440px !important;
-  object-fit: contain !important;
-  width: auto !important;
-  margin: 0 auto !important;
-}
-
-/* Text gradient styling */
-.text-gradient {
-  background: linear-gradient(180deg, #FFFFFF 0%, #A0A0A0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  border: 0 !important;
 }
