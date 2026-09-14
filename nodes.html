@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Node AI | View Nodes & Global GPU Network</title>
+  <meta name="description" content="Browse and rent high-performance GPU nodes on Node AI's decentralized network. NVIDIA H100, A100, RTX 4090 ready for instant AI deployment.">
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="_next/static/css/c33d1c57a1c0d06e.css">
+  <link rel="stylesheet" href="custom.css">
+</head>
+<body class="bg-black text-white antialiased selection:bg-green selection:text-black">
+
+  <!-- Header Navigation -->
+  <header class="fixed top-0 left-0 right-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/10 px-4 md:px-16 h-20 flex items-center">
+    <div class="max-w-1920 w-full mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <h1 class="inline-flex items-center gap-2">
+          <img alt="NodeAI" src="_next/image.url_https_3A_2F_2Fcdn.sanity.io_2Fimages_2F70v0mvvz_2Fproduction_2Fec5d711bbe32bbffa337812f289ac130c83552e4-115x24.svg_3Fh_3D100_26auto_3Dformat_w_640_q_75.svg" class="h-6 w-auto" />
+          <span class="sr-only">NodeAI</span>
+        </h1>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav aria-label="Main navigation" class="hidden lg:flex items-center gap-8">
+        <div class="relative group">
+          <button class="nav-item flex items-center gap-2 text-sm text-grey hover:text-white transition py-2">
+            Services
+            <svg width="10" height="7" viewBox="0 0 10 7" fill="none" class="transition-transform duration-300 group-hover:rotate-180"><path d="M0.5 0.5L5 5.5L9.5 0.5" stroke="currentColor" stroke-linecap="round"></path></svg>
+          </button>
+          <div class="lg:absolute top-full left-0 pt-2 hidden group-hover:block z-50 min-w-[200px]">
+            <ul class="bg-[#0c0c0e]/95 border border-white/10 rounded-xl p-3 shadow-2xl backdrop-blur-xl flex flex-col gap-1">
+              <li><a href="host.html" class="block px-3 py-2 text-sm text-grey hover:text-green hover:bg-white/5 rounded-lg transition">Host a Node</a></li>
+              <li><a href="rent.html" class="block px-3 py-2 text-sm text-grey hover:text-green hover:bg-white/5 rounded-lg transition">Rent a Node</a></li>
+              <li><a href="ecosystem.html" class="block px-3 py-2 text-sm text-grey hover:text-green hover:bg-white/5 rounded-lg transition">Ecosystem</a></li>
+              <li><a href="pricing.html" class="block px-3 py-2 text-sm text-grey hover:text-green hover:bg-white/5 rounded-lg transition">Pricing</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button class="nav-item flex items-center gap-2 text-sm text-grey hover:text-white transition py-2">
+            About
+            <svg width="10" height="7" viewBox="0 0 10 7" fill="none" class="transition-transform duration-300 group-hover:rotate-180"><path d="M0.5 0.5L5 5.5L9.5 0.5" stroke="currentColor" stroke-linecap="round"></path></svg>
+          </button>
+          <div class="lg:absolute top-full left-0 pt-2 hidden group-hover:block z-50 min-w-[200px]">
+            <ul class="bg-[#0c0c0e]/95 border border-white/10 rounded-xl p-3 shadow-2xl backdrop-blur-xl flex flex-col gap-1">
+              <li><a href="brand.html" class="block px-3 py-2 text-sm text-grey hover:text-green hover:bg-white/5 rounded-lg transition">Media Kit</a></li>
+              <li><a href="faqs.html" class="block px-3 py-2 text-sm text-grey hover:text-green hover:bg-white/5 rounded-lg transition">FAQs</a></li>
+              <li><a href="careers.html" class="block px-3 py-2 text-sm text-grey hover:text-green hover:bg-white/5 rounded-lg transition">Careers</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="nodes.html" class="nav-item text-sm text-green transition py-2 font-medium">Nodes Explorer</a>
+        <a href="blog.html" class="nav-item text-sm text-grey hover:text-white transition py-2">Blog</a>
+      </nav>
+
+      <!-- Deploy CTA -->
+      <div class="flex items-center gap-4">
+        <a href="deploy.html" class="bg-green text-black font-semibold text-xs md:text-sm px-6 py-2.5 rounded-full hover:shadow-[0_0_20px_rgba(76,192,84,0.5)] transition duration-300">
+          DEPLOY NOW
+        </a>
+        <button class="p-2 lg:hidden text-white" aria-expanded="false" aria-label="Toggle menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-1920 mx-auto px-4 md:px-16 pt-28 pb-20">
+
+    <!-- Hero Section -->
+    <section class="text-center max-w-4xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-green/30 bg-green/10 text-green text-xs font-mono uppercase tracking-wider mb-6">
+        <span class="w-2 h-2 rounded-full bg-green animate-pulse"></span>
+        Live Node Network Status: 100% Operational
+      </div>
+      <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-gradient mb-6">
+        Global Decentralized AI Compute Nodes
+      </h1>
+      <p class="text-grey text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+        Discover and deploy on high-performance GPU instances distributed across a verified global node infrastructure. Pay by the hour with zero lock-in.
+      </p>
+
+      <!-- Network Stats Bar -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-2xl bg-white/[0.02] border border-white/10 backdrop-blur-md">
+        <div class="flex flex-col">
+          <span class="text-2xl md:text-3xl font-bold text-green font-mono">1,482</span>
+          <span class="text-xs text-grey uppercase tracking-wider mt-1">Active GPU Nodes</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-2xl md:text-3xl font-bold text-white font-mono">99.98%</span>
+          <span class="text-xs text-grey uppercase tracking-wider mt-1">Network Uptime</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-2xl md:text-3xl font-bold text-green font-mono">48.2 PF</span>
+          <span class="text-xs text-grey uppercase tracking-wider mt-1">Total Compute</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-2xl md:text-3xl font-bold text-white font-mono">$0.34<span class="text-xs text-grey font-normal">/hr</span></span>
+          <span class="text-xs text-grey uppercase tracking-wider mt-1">Starting Price</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Node Explorer Grid -->
+    <section class="mb-20">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Available GPU Instances</h2>
+          <p class="text-grey text-sm mt-1">Verified hardware nodes ready for immediate deployment.</p>
+        </div>
+        <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0">
+          <button class="px-4 py-2 rounded-full text-xs font-mono bg-green text-black font-semibold">All Models</button>
+          <button class="px-4 py-2 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-grey hover:text-white transition">H100 / A100</button>
+          <button class="px-4 py-2 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-grey hover:text-white transition">RTX 4090</button>
+          <button class="px-4 py-2 rounded-full text-xs font-mono bg-white/5 border border-white/10 text-grey hover:text-white transition">L40S</button>
+        </div>
+      </div>
+
+      <!-- Node Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Node 1: H100 -->
+        <div class="flex flex-col justify-between p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-green/50 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(76,192,84,0.15)]">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-green/10 text-green border border-green/30">AVAILABLE</span>
+              <span class="text-xs text-grey font-mono">Region: US-East</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-green transition mb-2">NVIDIA H100 SXM5</h3>
+            <p class="text-xs text-grey mb-6">Top-tier enterprise accelerator for large language models and foundation training.</p>
+            
+            <div class="space-y-2.5 mb-6 text-xs font-mono">
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">VRAM</span>
+                <span class="text-white font-semibold">80GB HBM3</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">Compute Speed</span>
+                <span class="text-white font-semibold">3,350 TFLOPS</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">vCPU / RAM</span>
+                <span class="text-white font-semibold">32 vCPU / 128GB</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">Bandwidth</span>
+                <span class="text-white font-semibold">80 Gbps InfiniBand</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-baseline justify-between mb-4">
+              <span class="text-grey text-xs">Hourly Rate:</span>
+              <div class="text-right">
+                <span class="text-2xl font-bold text-green font-mono">$2.49</span>
+                <span class="text-grey text-xs">/hr</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <a href="rent.html" class="text-center py-2.5 rounded-xl border border-white/20 text-xs font-semibold text-white hover:bg-white/10 transition">Rent Node</a>
+              <a href="deploy.html" class="text-center py-2.5 rounded-xl bg-green text-black text-xs font-semibold hover:shadow-[0_0_15px_rgba(76,192,84,0.4)] transition">Deploy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Node 2: A100 80GB -->
+        <div class="flex flex-col justify-between p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-green/50 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(76,192,84,0.15)]">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-green/10 text-green border border-green/30">AVAILABLE</span>
+              <span class="text-xs text-grey font-mono">Region: EU-Central</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-green transition mb-2">NVIDIA A100 PCIe</h3>
+            <p class="text-xs text-grey mb-6">Proven industry standard for multi-modal inference and deep learning workloads.</p>
+            
+            <div class="space-y-2.5 mb-6 text-xs font-mono">
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">VRAM</span>
+                <span class="text-white font-semibold">80GB HBM2e</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">Compute Speed</span>
+                <span class="text-white font-semibold">1,248 TFLOPS</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">vCPU / RAM</span>
+                <span class="text-white font-semibold">16 vCPU / 64GB</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">Bandwidth</span>
+                <span class="text-white font-semibold">40 Gbps</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-baseline justify-between mb-4">
+              <span class="text-grey text-xs">Hourly Rate:</span>
+              <div class="text-right">
+                <span class="text-2xl font-bold text-green font-mono">$1.29</span>
+                <span class="text-grey text-xs">/hr</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <a href="rent.html" class="text-center py-2.5 rounded-xl border border-white/20 text-xs font-semibold text-white hover:bg-white/10 transition">Rent Node</a>
+              <a href="deploy.html" class="text-center py-2.5 rounded-xl bg-green text-black text-xs font-semibold hover:shadow-[0_0_15px_rgba(76,192,84,0.4)] transition">Deploy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Node 3: RTX 4090 24GB -->
+        <div class="flex flex-col justify-between p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-green/50 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(76,192,84,0.15)]">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-green/10 text-green border border-green/30">AVAILABLE</span>
+              <span class="text-xs text-grey font-mono">Region: US-West</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-green transition mb-2">NVIDIA RTX 4090</h3>
+            <p class="text-xs text-grey mb-6">Cost-effective ultra performance for fine-tuning, image generation & local LLMs.</p>
+            
+            <div class="space-y-2.5 mb-6 text-xs font-mono">
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">VRAM</span>
+                <span class="text-white font-semibold">24GB GDDR6X</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">Compute Speed</span>
+                <span class="text-white font-semibold">82.6 TFLOPS</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">vCPU / RAM</span>
+                <span class="text-white font-semibold">8 vCPU / 32GB</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">Bandwidth</span>
+                <span class="text-white font-semibold">10 Gbps</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-baseline justify-between mb-4">
+              <span class="text-grey text-xs">Hourly Rate:</span>
+              <div class="text-right">
+                <span class="text-2xl font-bold text-green font-mono">$0.39</span>
+                <span class="text-grey text-xs">/hr</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <a href="rent.html" class="text-center py-2.5 rounded-xl border border-white/20 text-xs font-semibold text-white hover:bg-white/10 transition">Rent Node</a>
+              <a href="deploy.html" class="text-center py-2.5 rounded-xl bg-green text-black text-xs font-semibold hover:shadow-[0_0_15px_rgba(76,192,84,0.4)] transition">Deploy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Node 4: 8x RTX 4090 Cluster -->
+        <div class="flex flex-col justify-between p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-green/50 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(76,192,84,0.15)]">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-green/10 text-green border border-green/30">AVAILABLE</span>
+              <span class="text-xs text-grey font-mono">Region: AP-East</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-green transition mb-2">8x NVIDIA RTX 4090 Cluster</h3>
+            <p class="text-xs text-grey mb-6">Massive parallel cluster for distributed model training and batch video rendering.</p>
+            
+            <div class="space-y-2.5 mb-6 text-xs font-mono">
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">Total VRAM</span>
+                <span class="text-white font-semibold">192GB GDDR6X</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">Compute Speed</span>
+                <span class="text-white font-semibold">660.8 TFLOPS</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">vCPU / RAM</span>
+                <span class="text-white font-semibold">64 vCPU / 256GB</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">Bandwidth</span>
+                <span class="text-white font-semibold">40 Gbps</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-baseline justify-between mb-4">
+              <span class="text-grey text-xs">Hourly Rate:</span>
+              <div class="text-right">
+                <span class="text-2xl font-bold text-green font-mono">$3.10</span>
+                <span class="text-grey text-xs">/hr</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <a href="rent.html" class="text-center py-2.5 rounded-xl border border-white/20 text-xs font-semibold text-white hover:bg-white/10 transition">Rent Node</a>
+              <a href="deploy.html" class="text-center py-2.5 rounded-xl bg-green text-black text-xs font-semibold hover:shadow-[0_0_15px_rgba(76,192,84,0.4)] transition">Deploy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Node 5: L40S 48GB -->
+        <div class="flex flex-col justify-between p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-green/50 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(76,192,84,0.15)]">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-green/10 text-green border border-green/30">AVAILABLE</span>
+              <span class="text-xs text-grey font-mono">Region: US-Central</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-green transition mb-2">NVIDIA L40S</h3>
+            <p class="text-xs text-grey mb-6">Universal datacenter GPU built for generative AI inference and graphics workloads.</p>
+            
+            <div class="space-y-2.5 mb-6 text-xs font-mono">
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">VRAM</span>
+                <span class="text-white font-semibold">48GB GDDR6</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">Compute Speed</span>
+                <span class="text-white font-semibold">733 TFLOPS</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">vCPU / RAM</span>
+                <span class="text-white font-semibold">24 vCPU / 96GB</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">Bandwidth</span>
+                <span class="text-white font-semibold">25 Gbps</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-baseline justify-between mb-4">
+              <span class="text-grey text-xs">Hourly Rate:</span>
+              <div class="text-right">
+                <span class="text-2xl font-bold text-green font-mono">$0.89</span>
+                <span class="text-grey text-xs">/hr</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <a href="rent.html" class="text-center py-2.5 rounded-xl border border-white/20 text-xs font-semibold text-white hover:bg-white/10 transition">Rent Node</a>
+              <a href="deploy.html" class="text-center py-2.5 rounded-xl bg-green text-black text-xs font-semibold hover:shadow-[0_0_15px_rgba(76,192,84,0.4)] transition">Deploy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Node 6: GH200 Grace Hopper -->
+        <div class="flex flex-col justify-between p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-green/50 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(76,192,84,0.15)]">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-green/10 text-green border border-green/30">AVAILABLE</span>
+              <span class="text-xs text-grey font-mono">Region: US-East</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-green transition mb-2">NVIDIA GH200 Grace Hopper</h3>
+            <p class="text-xs text-grey mb-6">Superchip combining Grace CPU and Hopper GPU for massive parameter models.</p>
+            
+            <div class="space-y-2.5 mb-6 text-xs font-mono">
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">Unified Memory</span>
+                <span class="text-white font-semibold">480GB LPDDR5X + 96GB HBM3</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">Compute Speed</span>
+                <span class="text-white font-semibold">4,000 TFLOPS</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">CPU Cores</span>
+                <span class="text-white font-semibold">72-Core Neoverse V2</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-white/5">
+                <span class="text-grey">NVLink Bandwidth</span>
+                <span class="text-white font-semibold">900 GB/s</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-baseline justify-between mb-4">
+              <span class="text-grey text-xs">Hourly Rate:</span>
+              <div class="text-right">
+                <span class="text-2xl font-bold text-green font-mono">$3.95</span>
+                <span class="text-grey text-xs">/hr</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <a href="rent.html" class="text-center py-2.5 rounded-xl border border-white/20 text-xs font-semibold text-white hover:bg-white/10 transition">Rent Node</a>
+              <a href="deploy.html" class="text-center py-2.5 rounded-xl bg-green text-black text-xs font-semibold hover:shadow-[0_0_15px_rgba(76,192,84,0.4)] transition">Deploy Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Node Architecture & Features Section -->
+    <section class="p-8 md:p-12 rounded-3xl bg-white/[0.02] border border-white/10 mb-16">
+      <div class="max-w-3xl mb-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-gradient mb-3">Enterprise-Grade Decentralized Architecture</h2>
+        <p class="text-grey text-sm md:text-base">Every node in the Node AI network undergoes hardware cryptographic verification and automated continuous benchmark scoring.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-black/50 border border-white/5">
+          <div class="w-10 h-10 rounded-xl bg-green/10 border border-green/30 flex items-center justify-center text-green mb-4">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Confidential Execution (TEE)</h3>
+          <p class="text-xs text-grey leading-relaxed">Hardware enclave encryption ensures your model weights, data, and prompts are mathematically protected from host inspection.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-black/50 border border-white/5">
+          <div class="w-10 h-10 rounded-xl bg-green/10 border border-green/30 flex items-center justify-center text-green mb-4">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Instant Node Provisioning</h3>
+          <p class="text-xs text-grey leading-relaxed">Launch pre-warmed GPU containers in under 45 seconds with pre-installed CUDA drivers, PyTorch, and popular LLM runtimes.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-black/50 border border-white/5">
+          <div class="w-10 h-10 rounded-xl bg-green/10 border border-green/30 flex items-center justify-center text-green mb-4">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Per-Second Billing</h3>
+          <p class="text-xs text-grey leading-relaxed">Pay strictly for actual compute seconds used. Stop or pause instances whenever idle without cancellation penalties.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="max-w-1920 mx-auto px-4 md:px-16 pt-12 pb-8 border-t border-white/10 text-grey text-sm">
+    <div class="flex flex-col md:flex-row items-start justify-between gap-8 mb-12">
+      <div>
+        <h4 class="text-gradient text-xl font-bold mb-3">Powering Demand for the Next Gen-AI</h4>
+        <p class="text-xs text-grey max-w-sm mb-6">Decentralized AI node infrastructure connecting compute providers with AI developers worldwide.</p>
+        <a href="deploy.html" class="inline-flex items-center gap-2 bg-green text-black font-semibold text-xs px-5 py-2.5 rounded-full hover:shadow-[0_0_15px_rgba(76,192,84,0.4)] transition">
+          LAUNCH DAPP
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <div>
+          <span class="text-white text-xs font-mono uppercase tracking-wider block mb-3">Sitemap</span>
+          <ul class="space-y-2 text-xs">
+            <li><a href="nodes.html" class="hover:text-green transition">View Nodes</a></li>
+            <li><a href="host.html" class="hover:text-green transition">Host a Node</a></li>
+            <li><a href="rent.html" class="hover:text-green transition">Rent a Node</a></li>
+            <li><a href="ecosystem.html" class="hover:text-green transition">Ecosystem</a></li>
+            <li><a href="pricing.html" class="hover:text-green transition">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="text-white text-xs font-mono uppercase tracking-wider block mb-3">Company</span>
+          <ul class="space-y-2 text-xs">
+            <li><a href="brand.html" class="hover:text-green transition">Media Kit</a></li>
+            <li><a href="faqs.html" class="hover:text-green transition">FAQs</a></li>
+            <li><a href="careers.html" class="hover:text-green transition">Careers</a></li>
+            <li><a href="blog.html" class="hover:text-green transition">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="text-white text-xs font-mono uppercase tracking-wider block mb-3">Community</span>
+          <ul class="space-y-2 text-xs">
+            <li><a href="https://twitter.com/NodeAIETH" target="_blank" class="hover:text-green transition">Twitter / X</a></li>
+            <li><a href="https://t.me/nodeaieth" target="_blank" class="hover:text-green transition">Telegram</a></li>
+            <li><a href="mailto:hello@nodes.ai" class="hover:text-green transition">Email Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center justify-between pt-6 border-t border-white/5 text-xs text-grey gap-4">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-green"></span>
+        <span>ALL SERVICES ONLINE</span>
+      </div>
+      <span>&copy; 2026 NODE.AI — ALL RIGHTS RESERVED</span>
+    </div>
+  </footer>
+
+  <script src="custom.js"></script>
+</body>
+</html>

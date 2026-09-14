@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Node AI | Deploy AI Nodes & Compute</title>
+  <meta name="description" content="Deploy AI models, LLM inference endpoints, and GPU containers instantly on Node AI decentralized infrastructure. 1-Click PyTorch, vLLM, DeepSeek, and Stable Diffusion.">
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="_next/static/css/c33d1c57a1c0d06e.css">
+  <link rel="stylesheet" href="custom.css">
+</head>
+<body class="bg-black text-white antialiased selection:bg-green selection:text-black">
+
+  <!-- Header Navigation -->
+  <header class="fixed top-0 left-0 right-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/10 px-4 md:px-16 h-20 flex items-center">
+    <div class="max-w-1920 w-full mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <h1 class="inline-flex items-center gap-2">
+          <img alt="NodeAI" src="_next/image.url_https_3A_2F_2Fcdn.sanity.io_2Fimages_2F70v0mvvz_2Fproduction_2Fec5d711bbe32bbffa337812f289ac130c83552e4-115x24.svg_3Fh_3D100_26auto_3Dformat_w_640_q_75.svg" class="h-6 w-auto" />
+          <span class="sr-only">NodeAI</span>
+        </h1>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav aria-label="Main navigation" class="hidden lg:flex items-center gap-8">
+        <div class="relative group">
+          <button class="nav-item flex items-center gap-2 text-sm text-grey hover:text-white transition py-2">
+            Services
+            <svg width="10" height="7" viewBox="0 0 10 7" fill="none" class="transition-transform duration-300 group-hover:rotate-180"><path d="M0.5 0.5L5 5.5L9.5 0.5" stroke="currentColor" stroke-linecap="round"></path></svg>
+          </button>
+          <div class="lg:absolute top-full left-0 pt-2 hidden group-hover:block z-50 min-w-[200px]">
+            <ul class="bg-[#0c0c0e]/95 border border-white/10 rounded-xl p-3 shadow-2xl backdrop-blur-xl flex flex-col gap-1">
+              <li><a href="host.html" class="block px-3 py-2 text-sm text-grey hover:text-green hover:bg-white/5 rounded-lg transition">Host a Node</a></li>
+              <li><a href="rent.html" class="block px-3 py-2 text-sm text-grey hover:text-green hover:bg-white/5 rounded-lg transition">Rent a Node</a></li>
+              <li><a href="ecosystem.html" class="block px-3 py-2 text-sm text-grey hover:text-green hover:bg-white/5 rounded-lg transition">Ecosystem</a></li>
+              <li><a href="pricing.html" class="block px-3 py-2 text-sm text-grey hover:text-green hover:bg-white/5 rounded-lg transition">Pricing</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button class="nav-item flex items-center gap-2 text-sm text-grey hover:text-white transition py-2">
+            About
+            <svg width="10" height="7" viewBox="0 0 10 7" fill="none" class="transition-transform duration-300 group-hover:rotate-180"><path d="M0.5 0.5L5 5.5L9.5 0.5" stroke="currentColor" stroke-linecap="round"></path></svg>
+          </button>
+          <div class="lg:absolute top-full left-0 pt-2 hidden group-hover:block z-50 min-w-[200px]">
+            <ul class="bg-[#0c0c0e]/95 border border-white/10 rounded-xl p-3 shadow-2xl backdrop-blur-xl flex flex-col gap-1">
+              <li><a href="brand.html" class="block px-3 py-2 text-sm text-grey hover:text-green hover:bg-white/5 rounded-lg transition">Media Kit</a></li>
+              <li><a href="faqs.html" class="block px-3 py-2 text-sm text-grey hover:text-green hover:bg-white/5 rounded-lg transition">FAQs</a></li>
+              <li><a href="careers.html" class="block px-3 py-2 text-sm text-grey hover:text-green hover:bg-white/5 rounded-lg transition">Careers</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="nodes.html" class="nav-item text-sm text-grey hover:text-white transition py-2">Nodes Explorer</a>
+        <a href="blog.html" class="nav-item text-sm text-grey hover:text-white transition py-2">Blog</a>
+      </nav>
+
+      <!-- Deploy CTA -->
+      <div class="flex items-center gap-4">
+        <a href="deploy.html" class="bg-green text-black font-semibold text-xs md:text-sm px-6 py-2.5 rounded-full shadow-[0_0_20px_rgba(76,192,84,0.4)] transition duration-300">
+          DEPLOY NOW
+        </a>
+        <button class="p-2 lg:hidden text-white" aria-expanded="false" aria-label="Toggle menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-1920 mx-auto px-4 md:px-16 pt-28 pb-20">
+
+    <!-- Hero Section -->
+    <section class="text-center max-w-4xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-green/30 bg-green/10 text-green text-xs font-mono uppercase tracking-wider mb-6">
+        <span class="w-2 h-2 rounded-full bg-green animate-pulse"></span>
+        1-Click Instant AI Deployment Studio
+      </div>
+      <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-gradient mb-6">
+        Deploy High-Performance AI Instances
+      </h1>
+      <p class="text-grey text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+        Select your AI template, pick your desired GPU configuration, and launch your instance with zero DevOps overhead in under 60 seconds.
+      </p>
+    </section>
+
+    <!-- Deployment Configuration Workflow Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+
+      <!-- Left Column: Step by Step Configurator (8 cols) -->
+      <div class="lg:col-span-8 space-y-8">
+
+        <!-- Step 1: Framework / App Template Selection -->
+        <div class="p-6 md:p-8 rounded-3xl bg-white/[0.02] border border-white/10">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-full bg-green text-black font-bold flex items-center justify-center text-xs">1</span>
+              <h2 class="text-xl font-bold text-white">Select AI Application or Framework</h2>
+            </div>
+            <span class="text-xs text-grey font-mono">6 Templates Available</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+            <!-- Option 1: DeepSeek-R1 / vLLM -->
+            <label class="flex items-start gap-4 p-4 rounded-2xl bg-black/60 border border-green/50 cursor-pointer hover:bg-white/5 transition">
+              <input type="radio" name="template" value="deepseek" checked class="mt-1 accent-green" />
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="font-bold text-sm text-white">DeepSeek-R1 / vLLM</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-green/10 text-green">Popular</span>
+                </div>
+                <p class="text-xs text-grey">High-throughput reasoning LLM inference endpoint with OpenAI-compatible API.</p>
+              </div>
+            </label>
+
+            <!-- Option 2: Llama 3.3 70B -->
+            <label class="flex items-start gap-4 p-4 rounded-2xl bg-black/60 border border-white/10 cursor-pointer hover:border-green/40 hover:bg-white/5 transition">
+              <input type="radio" name="template" value="llama" class="mt-1 accent-green" />
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="font-bold text-sm text-white">Llama 3.3 70B Endpoint</span>
+                </div>
+                <p class="text-xs text-grey">Pre-quantized 4-bit / 8-bit fast serving with WebUI & API access.</p>
+              </div>
+            </label>
+
+            <!-- Option 3: ComfyUI & SDXL -->
+            <label class="flex items-start gap-4 p-4 rounded-2xl bg-black/60 border border-white/10 cursor-pointer hover:border-green/40 hover:bg-white/5 transition">
+              <input type="radio" name="template" value="comfyui" class="mt-1 accent-green" />
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="font-bold text-sm text-white">ComfyUI + Stable Diffusion XL</span>
+                </div>
+                <p class="text-xs text-grey">Visual node-based image & video generation with pre-loaded checkpoints.</p>
+              </div>
+            </label>
+
+            <!-- Option 4: PyTorch 2.5 + CUDA 12.4 -->
+            <label class="flex items-start gap-4 p-4 rounded-2xl bg-black/60 border border-white/10 cursor-pointer hover:border-green/40 hover:bg-white/5 transition">
+              <input type="radio" name="template" value="pytorch" class="mt-1 accent-green" />
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="font-bold text-sm text-white">PyTorch 2.5 Dev Environment</span>
+                </div>
+                <p class="text-xs text-grey">JupyterLab, SSH access, cuDNN, TensorRT, and full Python data science stack.</p>
+              </div>
+            </label>
+
+            <!-- Option 5: Ollama Server -->
+            <label class="flex items-start gap-4 p-4 rounded-2xl bg-black/60 border border-white/10 cursor-pointer hover:border-green/40 hover:bg-white/5 transition">
+              <input type="radio" name="template" value="ollama" class="mt-1 accent-green" />
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="font-bold text-sm text-white">Ollama Multi-Model Hub</span>
+                </div>
+                <p class="text-xs text-grey">Run Mistral, Qwen, Gemma, and custom GGUF models with one click.</p>
+              </div>
+            </label>
+
+            <!-- Option 6: Custom Docker -->
+            <label class="flex items-start gap-4 p-4 rounded-2xl bg-black/60 border border-white/10 cursor-pointer hover:border-green/40 hover:bg-white/5 transition">
+              <input type="radio" name="template" value="custom" class="mt-1 accent-green" />
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="font-bold text-sm text-white">Custom Docker Container</span>
+                </div>
+                <p class="text-xs text-grey">Bring your own public or private Docker image registry with GPU passthrough.</p>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- Step 2: GPU Hardware Tier Selection -->
+        <div class="p-6 md:p-8 rounded-3xl bg-white/[0.02] border border-white/10">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-full bg-green text-black font-bold flex items-center justify-center text-xs">2</span>
+              <h2 class="text-xl font-bold text-white">Choose Compute Hardware Tier</h2>
+            </div>
+            <span class="text-xs text-green font-mono">Real-time Spot Pricing</span>
+          </div>
+
+          <div class="space-y-4">
+
+            <!-- Tier 1 -->
+            <label class="flex flex-col md:flex-row md:items-center justify-between p-4 rounded-2xl bg-black/60 border border-white/10 cursor-pointer hover:border-green/40 hover:bg-white/5 transition gap-4">
+              <div class="flex items-start gap-4">
+                <input type="radio" name="hardware" value="4090" class="mt-1 accent-green" />
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold text-sm text-white">1x NVIDIA RTX 4090</span>
+                    <span class="text-xs font-mono text-grey">24GB GDDR6X</span>
+                  </div>
+                  <p class="text-xs text-grey mt-1">16 vCPU &bull; 64GB RAM &bull; 100GB NVMe SSD &bull; 10 Gbps Network</p>
+                </div>
+              </div>
+              <div class="text-left md:text-right">
+                <span class="text-lg font-bold text-green font-mono">$0.39</span>
+                <span class="text-xs text-grey">/hour</span>
+              </div>
+            </label>
+
+            <!-- Tier 2 -->
+            <label class="flex flex-col md:flex-row md:items-center justify-between p-4 rounded-2xl bg-black/60 border border-green/50 cursor-pointer hover:bg-white/5 transition gap-4">
+              <div class="flex items-start gap-4">
+                <input type="radio" name="hardware" value="a100" checked class="mt-1 accent-green" />
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold text-sm text-white">1x NVIDIA A100 PCIe</span>
+                    <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-green/10 text-green">Recommended</span>
+                    <span class="text-xs font-mono text-grey">80GB HBM2e</span>
+                  </div>
+                  <p class="text-xs text-grey mt-1">32 vCPU &bull; 128GB RAM &bull; 250GB NVMe SSD &bull; 40 Gbps Network</p>
+                </div>
+              </div>
+              <div class="text-left md:text-right">
+                <span class="text-lg font-bold text-green font-mono">$1.29</span>
+                <span class="text-xs text-grey">/hour</span>
+              </div>
+            </label>
+
+            <!-- Tier 3 -->
+            <label class="flex flex-col md:flex-row md:items-center justify-between p-4 rounded-2xl bg-black/60 border border-white/10 cursor-pointer hover:border-green/40 hover:bg-white/5 transition gap-4">
+              <div class="flex items-start gap-4">
+                <input type="radio" name="hardware" value="h100" class="mt-1 accent-green" />
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold text-sm text-white">1x NVIDIA H100 SXM5</span>
+                    <span class="text-xs font-mono text-grey">80GB HBM3</span>
+                  </div>
+                  <p class="text-xs text-grey mt-1">64 vCPU &bull; 256GB RAM &bull; 500GB NVMe SSD &bull; 80 Gbps InfiniBand</p>
+                </div>
+              </div>
+              <div class="text-left md:text-right">
+                <span class="text-lg font-bold text-green font-mono">$2.49</span>
+                <span class="text-xs text-grey">/hour</span>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- Step 3: Instance Configuration & Region -->
+        <div class="p-6 md:p-8 rounded-3xl bg-white/[0.02] border border-white/10">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="w-8 h-8 rounded-full bg-green text-black font-bold flex items-center justify-center text-xs">3</span>
+            <h2 class="text-xl font-bold text-white">Instance Configuration</h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-grey uppercase tracking-wider mb-2">Instance Name</label>
+              <input type="text" value="node-ai-workspace-1" class="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/10 text-sm text-white focus:outline-none focus:border-green font-mono" />
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-grey uppercase tracking-wider mb-2">Deployment Region</label>
+              <select class="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/10 text-sm text-white focus:outline-none focus:border-green font-mono">
+                <option>US-East (N. Virginia) - Lowest Latency</option>
+                <option>US-West (Oregon)</option>
+                <option>EU-Central (Frankfurt)</option>
+                <option>AP-East (Tokyo)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Deployment Summary & Terminal Preview (4 cols) -->
+      <div class="lg:col-span-4 space-y-6">
+
+        <!-- Live Summary Card -->
+        <div class="p-6 rounded-3xl bg-white/[0.02] border border-green/30 backdrop-blur-xl sticky top-28">
+          <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
+            <h3 class="text-base font-bold text-white">Deployment Summary</h3>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-green/10 text-green">Ready</span>
+          </div>
+
+          <div class="space-y-3 text-xs font-mono mb-6">
+            <div class="flex justify-between">
+              <span class="text-grey">Template</span>
+              <span class="text-white font-semibold">DeepSeek-R1 / vLLM</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-grey">GPU Model</span>
+              <span class="text-white font-semibold">NVIDIA A100 (80GB)</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-grey">Compute Memory</span>
+              <span class="text-white font-semibold">80GB HBM2e</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-grey">Storage</span>
+              <span class="text-white font-semibold">250GB High-Speed NVMe</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-grey">Billing Method</span>
+              <span class="text-green font-semibold">Per-Second Spot</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-black/80 border border-white/5 mb-6">
+            <div class="flex justify-between items-baseline mb-1">
+              <span class="text-xs text-grey">Estimated Cost:</span>
+              <div class="text-right">
+                <span class="text-3xl font-bold text-green font-mono">$1.29</span>
+                <span class="text-xs text-grey">/hr</span>
+              </div>
+            </div>
+            <span class="text-[10px] text-grey block">Zero prepayment &bull; Stop or destroy anytime</span>
+          </div>
+
+          <button id="deploy-btn" class="w-full py-3.5 rounded-2xl bg-green text-black font-bold text-sm hover:shadow-[0_0_25px_rgba(76,192,84,0.6)] transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2">
+            <span>🚀</span> LAUNCH INSTANCE
+          </button>
+
+          <!-- Interactive Terminal Status Preview -->
+          <div id="terminal-box" class="mt-6 p-4 rounded-xl bg-black border border-white/10 text-[11px] font-mono text-grey space-y-1 hidden">
+            <div class="flex items-center gap-1.5 pb-2 border-b border-white/10 mb-2 text-white">
+              <span class="w-2.5 h-2.5 rounded-full bg-green/80 animate-ping"></span>
+              <span>Deployment Progress</span>
+            </div>
+            <div class="text-green">&gt; Initializing secure enclave... [OK]</div>
+            <div class="text-green">&gt; Allocating NVIDIA A100 GPU... [OK]</div>
+            <div class="text-green">&gt; Mounting 250GB NVMe storage... [OK]</div>
+            <div class="text-white animate-pulse">&gt; Pulling vLLM container weights... [74%]</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="max-w-1920 mx-auto px-4 md:px-16 pt-12 pb-8 border-t border-white/10 text-grey text-sm">
+    <div class="flex flex-col md:flex-row items-start justify-between gap-8 mb-12">
+      <div>
+        <h4 class="text-gradient text-xl font-bold mb-3">Powering Demand for the Next Gen-AI</h4>
+        <p class="text-xs text-grey max-w-sm mb-6">Decentralized AI node infrastructure connecting compute providers with AI developers worldwide.</p>
+        <a href="deploy.html" class="inline-flex items-center gap-2 bg-green text-black font-semibold text-xs px-5 py-2.5 rounded-full hover:shadow-[0_0_15px_rgba(76,192,84,0.4)] transition">
+          LAUNCH DAPP
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <div>
+          <span class="text-white text-xs font-mono uppercase tracking-wider block mb-3">Sitemap</span>
+          <ul class="space-y-2 text-xs">
+            <li><a href="nodes.html" class="hover:text-green transition">View Nodes</a></li>
+            <li><a href="host.html" class="hover:text-green transition">Host a Node</a></li>
+            <li><a href="rent.html" class="hover:text-green transition">Rent a Node</a></li>
+            <li><a href="ecosystem.html" class="hover:text-green transition">Ecosystem</a></li>
+            <li><a href="pricing.html" class="hover:text-green transition">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="text-white text-xs font-mono uppercase tracking-wider block mb-3">Company</span>
+          <ul class="space-y-2 text-xs">
+            <li><a href="brand.html" class="hover:text-green transition">Media Kit</a></li>
+            <li><a href="faqs.html" class="hover:text-green transition">FAQs</a></li>
+            <li><a href="careers.html" class="hover:text-green transition">Careers</a></li>
+            <li><a href="blog.html" class="hover:text-green transition">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="text-white text-xs font-mono uppercase tracking-wider block mb-3">Community</span>
+          <ul class="space-y-2 text-xs">
+            <li><a href="https://twitter.com/NodeAIETH" target="_blank" class="hover:text-green transition">Twitter / X</a></li>
+            <li><a href="https://t.me/nodeaieth" target="_blank" class="hover:text-green transition">Telegram</a></li>
+            <li><a href="mailto:hello@nodes.ai" class="hover:text-green transition">Email Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center justify-between pt-6 border-t border-white/5 text-xs text-grey gap-4">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-green"></span>
+        <span>ALL SERVICES ONLINE</span>
+      </div>
+      <span>&copy; 2026 NODE.AI — ALL RIGHTS RESERVED</span>
+    </div>
+  </footer>
+
+  <script src="custom.js"></script>
+  <script>
+    document.getElementById('deploy-btn').addEventListener('click', function() {
+      var box = document.getElementById('terminal-box');
+      box.classList.remove('hidden');
+      this.innerText = 'INSTANCE PROVISIONING...';
+      this.disabled = true;
+      this.classList.add('opacity-75');
+      setTimeout(function() {
+        alert('AI Node Instance successfully launched!\nEndpoint: https://node-482.nodes.ai:8000/v1\nStatus: Online');
+      }, 2500);
+    });
+  </script>
+</body>
+</html>
